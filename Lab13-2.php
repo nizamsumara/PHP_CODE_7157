@@ -1,0 +1,27 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['username']))
+{
+    header("Location: pro3.7.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<h2>Welcome <?php echo $_SESSION['username']; ?></h2>
+
+<p>You are successfully logged in.</p>
+
+<form action="logout.php" method="post">
+    <input type="submit" value="Logout">
+</form>
+
+</body>
+</html>
